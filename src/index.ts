@@ -12,6 +12,11 @@ const honoAstro: AstroIntegration = {
 					ssr: {
 						noExternal: ['hono-astro-adapter'],
 					},
+					build: {
+						rollupOptions: {
+							external: ['hono-astro-adapter'],
+						}
+					}
 				},
 			});
 		},
