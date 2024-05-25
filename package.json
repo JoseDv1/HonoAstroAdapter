@@ -9,5 +9,14 @@
 		"astro": "^4.9.1",
 		"hono": "^4.3.11"
 	},
-	"version": "1.0.1"
+	"version": "1.0.1",
+	"files": [
+		"dist"
+	],
+	"keywords": [
+		"astro-integration",
+		"astro-component",
+		"withastro",
+		"astro"
+	]
 }

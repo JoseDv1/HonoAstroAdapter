@@ -1,7 +1,7 @@
 import type { AstroAdapter, AstroIntegration } from "astro";
 
 const honoAstro: AstroIntegration = {
-	name: "HonoAstroAdapter",
+	name: "hono-astro-adapter",
 	hooks: {
 		'astro:config:setup': ({ updateConfig, config }) => {
 			updateConfig({
@@ -22,7 +22,7 @@ const honoAstro: AstroIntegration = {
 }
 
 const astroAdapter: AstroAdapter = {
-	name: "HonoAstroAdapter",
+	name: "hono-astro-adapter",
 	supportedAstroFeatures: {
 		serverOutput: "stable",
 		staticOutput: "stable",
@@ -35,7 +35,7 @@ const astroAdapter: AstroAdapter = {
 		i18nDomains: "experimental",
 	},
 	exports: ["handler"],
-	serverEntrypoint: "./server.js",
+	serverEntrypoint: "hono-astro-adapter/server.js",
 }
 
 export default function createIntegration() {
