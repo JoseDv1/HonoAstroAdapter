@@ -9,7 +9,7 @@
 		"astro": "^4.9.1",
 		"hono": "^4.3.11"
 	},
-	"version": "1.0.4",
+	"version": "1.0.3",
 	"files": [
 		"dist"
 	],
