@@ -18,5 +18,9 @@
 		"astro-component",
 		"withastro",
 		"astro"
-	]
+	],
+	"exports": {
+		".": "./dist/index.js",
+		"./server.js": "./dist/server.js"
+	}
 }
