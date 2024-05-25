@@ -2,12 +2,12 @@
 	"name": "hono-astro-adapter",
 	"type": "module",
 	"devDependencies": {
-		"@types/bun": "latest"
+		"@types/bun": "latest",
+		"hono": "^4.3.11"
 	},
 	"peerDependencies": {
 		"typescript": "^5.0.0",
-		"astro": "^4.9.1",
-		"hono": "^4.3.11"
+		"astro": "^4.9.1"
 	},
 	"version": "1.0.5",
 	"files": [
