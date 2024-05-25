@@ -24,10 +24,11 @@
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
     "baseUrl": ".",
+    "outDir": "./dist",
     "paths": {
       "@/*": [
         "src/*"
       ]
-    }
+    },
   }
 }

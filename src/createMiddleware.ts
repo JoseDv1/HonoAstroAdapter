@@ -20,7 +20,6 @@ function createAppHandler(app: App): MiddlewareHandler {
 	return async (ctx, next) => {
 		const request: Request = ctx.req.raw;
 		const routeData = app.match(request)
-		if (next) return await next()
 		if (routeData) {
 			// Renderizar la pagina usando Astro
 			const response = await als.run(
@@ -28,12 +27,14 @@ function createAppHandler(app: App): MiddlewareHandler {
 				() => app.render(request)
 			);
 
-			// Enviar la respuesta
-			return response;
+			ctx.res = response;
+			await next();
+		} else if (next) {
+			await next();
+		} else {
+			const response = await app.render(request);
+			ctx.res = response;
+			return ctx.res;
 		}
-
-		// Si no se encuentra la ruta, devolver un 404
-		const response = await app.render(request);
-		return response;
 	}
 }

@@ -10,7 +10,7 @@ const honoAstro: AstroIntegration = {
 				},
 				vite: {
 					ssr: {
-						noExternal: ['@astrojs/node'],
+						noExternal: ['hono-astro-adapter'],
 					},
 				},
 			});
@@ -27,13 +27,15 @@ const astroAdapter: AstroAdapter = {
 		serverOutput: "stable",
 		staticOutput: "stable",
 		hybridOutput: "stable",
-		i18nDomains: "experimental",
 		assets: {
-			supportKind: "experimental",
-		}
+			supportKind: "stable",
+			isSharpCompatible: true,
+			isSquooshCompatible: true,
+		},
+		i18nDomains: "experimental",
 	},
 	exports: ["handler"],
-	serverEntrypoint: "./server",
+	serverEntrypoint: "./server.js",
 }
 
 export default function createIntegration() {
