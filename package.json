@@ -22,5 +22,8 @@
 	"exports": {
 		".": "./dist/index.js",
 		"./server.js": "./dist/server.js"
+	},
+	"scripts": {
+		"build": "bun build src/index.ts src/server.ts --outdir ./dist --target bun"
 	}
 }
