@@ -9,7 +9,7 @@
 		"typescript": "^5.0.0",
 		"astro": "^4.9.1"
 	},
-	"version": "1.0.6",
+	"version": "1.0.9",
 	"files": [
 		"dist"
 	],
