@@ -3,23 +3,6 @@ import type { AstroAdapter, AstroIntegration } from "astro";
 const honoAstro: AstroIntegration = {
 	name: "hono-astro-adapter",
 	hooks: {
-		'astro:config:setup': ({ updateConfig, config }) => {
-			updateConfig({
-				image: {
-					endpoint: config.image.endpoint ?? 'astro/assets/endpoint/node',
-				},
-				vite: {
-					ssr: {
-						noExternal: ['hono-astro-adapter'],
-					},
-					build: {
-						rollupOptions: {
-							external: ['hono-astro-adapter'],
-						}
-					}
-				},
-			});
-		},
 		"astro:config:done": async ({ setAdapter }) => {
 			setAdapter(astroAdapter);
 		}
