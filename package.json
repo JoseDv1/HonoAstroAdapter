@@ -2,6 +2,7 @@
 	"name": "hono-astro-adapter",
 	"type": "module",
 	"devDependencies": {
+		"@types/node": "^22.5.4",
 		"hono": "latest",
 		"typescript": "^5.5.4"
 	},
