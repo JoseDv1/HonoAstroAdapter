@@ -2,14 +2,14 @@
 	"name": "hono-astro-adapter",
 	"type": "module",
 	"devDependencies": {
-		"@types/bun": "latest",
-		"hono": "^4.3.11"
+		"hono": "latest",
+		"typescript": "^5.5.4"
 	},
 	"peerDependencies": {
-		"typescript": "^5.0.0",
-		"astro": "^4.14.4"
+		"astro": "latest",
+		"typescript": "^5.0.0"
 	},
-	"version": "1.0.10",
+	"version": "1.0.0",
 	"files": [
 		"dist"
 	],
@@ -24,6 +24,6 @@
 		"./server.js": "./dist/server.js"
 	},
 	"scripts": {
-		"build": "bun build src/index.ts src/server.ts --outdir ./dist --target bun"
+		"build": "tsc"
 	}
 }
