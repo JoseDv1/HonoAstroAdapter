@@ -10,10 +10,7 @@
 		"astro": "latest",
 		"typescript": "^5.0.0"
 	},
-	"version": "1.0.13",
-	"files": [
-		"dist"
-	],
+	"version": "1.0.14",
 	"keywords": [
 		"astro-integration",
 		"astro-component",
