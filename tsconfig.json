@@ -24,5 +24,11 @@
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
     "outDir": "./dist",
-  }
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "esModuleInterop": true,
+  },
+  "include": [
+    "src"
+  ]
 }

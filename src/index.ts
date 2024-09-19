@@ -35,6 +35,7 @@ const astroAdapter: AstroAdapter = {
 			isSquooshCompatible: true,
 		},
 		i18nDomains: "experimental",
+		envGetSecret: "experimental",
 	},
 	exports: ["handler"],
 	serverEntrypoint: "hono-astro-adapter/server.js",

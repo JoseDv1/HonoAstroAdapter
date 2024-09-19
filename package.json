@@ -9,7 +9,7 @@
 		"astro": "latest",
 		"typescript": "^5.0.0"
 	},
-	"version": "1.0.15",
+	"version": "1.0.16",
 	"files": [
 		"dist"
 	],
@@ -21,9 +21,14 @@
 	],
 	"exports": {
 		".": "./dist/index.js",
-		"./server.js": "./dist/server.js"
+		"./server.js": "./dist/server.js",
+		"./package.json": "./package.json"
 	},
 	"scripts": {
 		"build": "bun build src/index.ts src/server.ts --outdir ./dist --target bun"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JoseDv1/HonoAstroAdapter.git"
 	}
 }
