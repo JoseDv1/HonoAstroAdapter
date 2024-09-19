@@ -73,3 +73,27 @@ Run your server and enjoy the SSR capabilities of your Astro project.
 ```bash
 	bun src/index.js
 ```
+
+### Render your custom 404 page
+
+To render a custom 404 page, you can create a `404.astro` file in your project and the adapter will render it when a route is not found. you You have to set the next parameter in the midleware to undefined to render the 404 page.
+
+```javascript
+app.use((ctx) => ssrHandler(ctx)); // Use the SSR handler 
+```
+
+### Locals 
+you can pass locals to the SSR handler by passing an object to the handler function.
+
+```javascript
+app.use((ctx, next) => ssrHandler(ctx, next, { title: "Hello World" })); // Use the SSR handler 
+```
+
+And you can access the locals in your astro pages or API routes with the `locals` object.
+
+```astro
+const locals = Astro.locals;
+```
+
+
+
