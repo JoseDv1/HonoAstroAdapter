@@ -38,7 +38,6 @@ export function createMiddleware(app: App) {
 				addCookieHeader: true,
 				routeData,
 			}));
-			// Finish the response
 			return pageRes;
 		} else if (next) {
 			// If the route doesn't match with any route on the app instance then we render call next middleware

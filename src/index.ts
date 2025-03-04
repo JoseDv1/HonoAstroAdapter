@@ -1,4 +1,4 @@
-import type { AstroAdapter, AstroIntegration } from "astro";
+import type { AstroIntegration } from "astro";
 import { passthroughImageService } from "astro/config";
 
 export default function createIntegration(): AstroIntegration {
