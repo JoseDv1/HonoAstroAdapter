@@ -22,6 +22,10 @@ yarn add hono-astro-adapter
 pnpm add hono-astro-adapter
 ```
 
+## Compatibility
+
+While examples may use Bun, this adapter is designed to work with Hono in various JavaScript runtimes (Node.js, Deno, Bun, Cloudflare Workers) wherever Hono itself is supported. The core adapter logic is runtime-agnostic.
+
 ## Usage
 
 ### 1. Set up the Adapter
@@ -71,12 +75,18 @@ export default {
 Run your server and enjoy the SSR capabilities of your Astro project.
 
 ```bash
-	bun src/index.js
+bun run <your-server-file>.js # e.g., bun run server.js
+```
+(Note: `<your-server-file>.js` is the file created in step 3 of the "Usage" section where you set up your Hono server.)
+
+Alternatively, for Node.js:
+```bash
+node <your-server-file>.js # e.g., node server.js
 ```
 
 ### Render your custom 404 page
 
-To render a custom 404 page, you can create a `404.astro` file in your project and the adapter will render it when a route is not found. you You have to set the next parameter in the midleware to undefined to render the 404 page.
+To render a custom 404 page, you can create a `404.astro` file in your project and the adapter will render it when a route is not found. To render your Astro-defined custom 404 page (e.g., `src/pages/404.astro`), ensure that the SSR handler is the last middleware in the chain for requests that should fall through to the Astro app's 404 handling. If you are passing the `next` function to the handler, not calling `next()` or ensuring it's `undefined` for unhandled routes will allow Astro's 404 page to be rendered.
 
 ```javascript
 app.use((ctx) => ssrHandler(ctx)); // Use the SSR handler 

@@ -2,12 +2,12 @@
 	"name": "hono-astro-adapter",
 	"type": "module",
 	"devDependencies": {
-		"@types/bun": "latest",
-		"hono": "latest"
+		"@types/bun": "latest"
 	},
 	"peerDependencies": {
 		"astro": "latest",
-		"typescript": "^5.8.2"
+		"typescript": "^5.8.2",
+		"hono": "latest"
 	},
 	"version": "1.0.18",
 	"files": [
@@ -25,7 +25,8 @@
 		"./package.json": "./package.json"
 	},
 	"scripts": {
-		"build": "tsc"
+		"build": "tsc",
+		"test": "bun test"
 	},
 	"repository": {
 		"type": "git",

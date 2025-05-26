@@ -8,9 +8,9 @@ import { AsyncLocalStorage } from "node:async_hooks";
  * @param app Astro App instance
  * @returns MiddlewareHandler that can be used with hono to render the Pages
  */
-export function createMiddleware(app: App) {
+export function createMiddleware(app: App, alsInstance?: AsyncLocalStorage<any>) {
 	// Create a new AsyncLocalStorage instance
-	const als = new AsyncLocalStorage();
+	const als = alsInstance || new AsyncLocalStorage();
 
 	// Create a new logger instance
 	const logger = app.getAdapterLogger();
@@ -19,7 +19,7 @@ export function createMiddleware(app: App) {
 	process.on("unhandledRejection", (reason) => {
 		const requestUrl = als.getStore();
 		logger.error(`Unhandled rejection while rendering ${requestUrl}`);
-		console.error(reason);
+		logger.error(`Unhandled rejection: ${reason}`);
 	});
 
 	// The middleware function
